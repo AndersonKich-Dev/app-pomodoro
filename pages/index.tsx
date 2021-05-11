@@ -94,6 +94,7 @@ export default function Home() {
     toogleBackgrondColor('#4cd62b')
     setIsRestOnly(false)
     setIsRest(false)
+    setCiclosMemories(0)
   }
 
   const setInitWatch = (time:number) =>{
@@ -189,7 +190,7 @@ export default function Home() {
       <div className={styles.contador} >
        <ul>
           <li>
-              <button onClick={()=>  restartInitialPomodoro(initialTime)} disabled={isActive}>Pomodoro</button>
+              <button onClick={()=>  restartInitialPomodoro(initialTime)} disabled={isActive}>Work</button>
           </li>
           <li>
             <button onClick={()=> startRestOnly(shortRest)} disabled={isActive}>Short Rest</button>
@@ -224,7 +225,7 @@ export default function Home() {
           </span>          
         </div>  
 
-        <div className={styles.rounds}>{`${ciclosMemorie}/${ciclesForRest}`}</div>      
+        <div className={styles.rounds} style={{visibility:isRestOnly ? 'hidden' : 'visible'}}>{`${ciclosMemorie}/${ciclesForRest}`}</div>      
       </div>
 
       <button className={styles.buttonStart} onClick={() => toogleIsActive(!isActive)} style={{backgroundColor: !isActive ? 'green' : 'red'}}>{!isActive ? 'Start' : 'Stop' }</button>

@@ -34,7 +34,7 @@ export function TimerContextProvider({children}){
   const [longRest, setLongRest] = useState(5) 
   const [isActive, setIsActive] = useState(false)
   const [background, setBackground] = useState('#4cd62b')
-  const [settingsMenu, setSettingsMenu] = useState(false)
+  const [settingsMenu, setSettingsMenu] = useState(true)
   const [timeHiddenSettings, setTimeHiddenSettings] = useState(0)
 
  
